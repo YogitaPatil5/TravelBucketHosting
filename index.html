@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Bucket Hosting</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>Travel Bucket Hosting</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#bucketlist">Bucket List</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome</h2>
+    <p>Plan and save your dream destinations!</p>
+  </section>
+
+  <section id="destinations">
+    <h2>Popular Destinations</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/paris.jpg" alt="Paris" />
+        <p>Paris</p>
+      </div>
+      <div class="card">
+        <img src="images/bali.jpg" alt="Bali" />
+        <p>Bali</p>
+      </div>
+      <div class="card">
+        <img src="images/tokyo.jpg" alt="Tokyo" />
+        <p>Tokyo</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="bucketlist">
+    <h2>My Bucket List</h2>
+    <input type="text" id="placeInput" placeholder="Add a place..." />
+    <button onclick="addPlace()">Add</button>
+    <ul id="bucketList"></ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Name" required />
+      <input type="email" placeholder="Email" required />
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Travel Bucket Hosting</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

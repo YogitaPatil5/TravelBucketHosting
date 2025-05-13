@@ -1,0 +1,34 @@
+function addPlace() {
+  const input = document.getElementById("placeInput");
+  const place = input.value.trim();
+  if (!place) return;
+
+  const list = document.getElementById("bucketList");
+  const li = document.createElement("li");
+  li.textContent = place;
+  list.appendChild(li);
+
+  // Save to localStorage
+  let savedList = JSON.parse(localStorage.getItem("bucketList")) || [];
+  savedList.push(place);
+  localStorage.setItem("bucketList", JSON.stringify(savedList));
+
+  input.value = "";
+}
+
+function loadBucketList() {
+  const savedList = JSON.parse(localStorage.getItem("bucketList")) || [];
+  const list = document.getElementById("bucketList");
+  savedList.forEach(place => {
+    const li = document.createElement("li");
+    li.textContent = place;
+    list.appendChild(li);
+  });
+}
+
+function submitForm(event) {
+  event.preventDefault();
+  alert("Thank you for contacting us! We’ll get back soon.");
+}
+
+window.onload = loadBucketList;
