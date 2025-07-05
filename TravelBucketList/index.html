@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="/airplane.png">
+    <link rel="stylesheet" href="./src/style.css" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>Travel Bucket List</title>
+  </head>
+  <body>
+    <main id="app" role="main" aria-label="Travel bucket list application">
+      <header>
+        <h1>Travel Bucket List ✈️</h1>
+      </header>
+
+      <div id="counter" aria-live="polite" aria-atomic="true">Loading...</div>
+
+      <form
+        id="add-form"
+        aria-label="Add a new travel destination to your bucket list"
+      >
+        <input
+          type="text"
+          id="new-place"
+          placeholder="Add a new place to visit"
+          aria-required="true"
+          autocomplete="off"
+          aria-describedby="placeHelp"
+          maxlength="50"
+          required
+        />
+        <textarea
+          id="new-notes"
+          placeholder="Add notes (optional)"
+          aria-label="Notes for the visit destination"
+          maxlength="250"
+          rows="3"
+        ></textarea>
+        <button type="submit" aria-label="Add place to bucket list">
+          Add Place
+        </button>
+      </form>
+
+      <nav id="filters" role="tablist" aria-label="Filter travel destinations">
+        <button
+          type="button"
+          class="active"
+          data-filter="all"
+          role="tab"
+          aria-selected="true"
+          tabindex="0"
+        >
+          All
+        </button>
+        <button
+          type="button"
+          data-filter="notvisited"
+          role="tab"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          Not Visited
+        </button>
+        <button
+          type="button"
+          data-filter="visited"
+          role="tab"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          Visited
+        </button>
+      </nav>
+
+      <ul
+        id="bucket-list"
+        aria-live="polite"
+        aria-relevant="additions removals"
+        aria-label="Travel bucket list"
+      ></ul>
+
+      <section id="clear-buttons">
+        <button id="clear-visited" aria-label="Clear all visited places">
+          Clear Visited
+        </button>
+        <button id="clear-all" aria-label="Clear entire bucket list">
+          Clear All
+        </button>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
